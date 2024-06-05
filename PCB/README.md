@@ -2,6 +2,9 @@
 
 This repository contains the design and implementation of a 3D scanner using an ATmega328P microcontroller, NEMA 17 stepper motors, and stepper drivers. The project aims to capture a point cloud of a 3D object and transmit the data to a computer as serial data for mapping those points using software.
 
+### PCB 
+![PCB](https://github.com/RPX2001/3D-Scanner/blob/main/PCB/WhatsApp%20Image%202024-06-05%20at%2019.53.19.jpeg)
+
 ### Components
 
 - **Microcontroller:** ATmega328P (SMD)
