@@ -34,6 +34,9 @@ The PCB layout is designed using SMD components for compactness and reliability.
 - **Motor Drivers:** For driving the NEMA 17 stepper motors.
 - **Power Supply Circuit:** To provide necessary power to the components.
 
+### PCB 
+![PCB](https://github.com/RPX2001/3D-Scanner/blob/main/WhatsApp%20Image%202024-06-05%20at%2019.54.27.jpeg)
+
 ## Getting Started
 
 ### Prerequisites
