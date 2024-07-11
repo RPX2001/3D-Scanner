@@ -3,16 +3,39 @@
 This repository contains the design and implementation of a 3D scanner using an ATmega328P microcontroller, NEMA 17 stepper motors, and stepper drivers. The goal of this project is to capture a point cloud of a 3D object, transmit the data to a computer as serial data, and map those points using software.
 
 ## Project Overview
+Our 3D scanner project aims to design and build a machine capable of scanning an object and generating a 3D map of it. The scanner primarily comprises two parts: a linear Z-axis motion slider and a turntable. The object to be scanned is placed on the turntable, which rotates during scanning. After each full rotation, the Z-axis slider raises the ToF sensor slightly, and the process repeats. Distance measurements from the ToF sensor are sent to a PC in real-time via serial communication, stored in a .txt file, and used to generate a 3D point cloud map of the scanned object.
 
-### Components
+## Project Components
+- **Microcontroller**: ATmega328P
+- **Stepper Motors**: NEMA 17
+- **Stepper Motor Drivers**: TB6600
+- **ToF Sensor**: VL53L0X
+- **Voltage Regulator**: LM7805
+- **USB to Serial Converter**: CH340C
+- **Turntable and Z-axis Slider**: Custom mechanical parts designed in SolidWorks
 
-- **Microcontroller:** ATmega328P
-- **Stepper Motors:** NEMA 17
-- **Stepper Drivers:** A4988 or similar
-- **Distance Sensor:** (Specify the sensor if used, e.g., Ultrasonic sensor or LIDAR)
-- **Mechanical Design:** Smooth and screw shafts for precision movement
-- **PCB Layout:** Designed using SMD components
-- **Turntable:** For rotating the object being scanned
+
+
+## Electronic Design
+
+### Component Selection
+
+- **Microcontroller (ATmega328P)**: Chosen for its reliability, compact size, and capability to handle multiple inputs efficiently. It is programmed via a USB connection using the CH340C IC.
+- **Stepper Motors (NEMA 17)**: Selected for their high torque and compatibility with 12V power supply. Specifications include 76 oz*in torque, 1.8° step angle, and 1.68A/phase peak current.
+- **Stepper Motor Drivers (TB6600)**: Supports a wide range of power inputs (9-42VDC) and can output 4A peak current. Features include speed and direction control, microstep settings, and high-speed optocoupler isolation.
+- **ToF Sensor (VL53L0X)**: Provides accurate distance measurements for scanning.
+- **Voltage Regulator (LM7805)**: Converts 12V input to a stable 5V output to power the microcontroller and sensor.
+
+### PCB Design
+The PCB design integrates the microcontroller, voltage regulator, stepper motor drivers, and USB to serial converter. SMD components are used to minimize space. The design includes necessary capacitors for the LM7805, signal routing for stepper motor control, and connectors for the ToF sensor and stepper motors.
+
+## Mechanical Design
+The mechanical design includes a 14cm diameter turntable and a Z-axis slider mechanism. Components such as smooth shafts, screw shafts, and couplers ensure precise linear motion. The enclosure houses the PCB, stepper drivers, and motors, providing a compact and durable structure.
+
+## Software Implementation
+### Arduino Code
+The Arduino code controls the stepper motors and reads distance values from the ToF sensor. It uses direct port manipulation and register-level programming for efficient motor control.
+
 
 ### Functionality
 
@@ -21,62 +44,10 @@ This repository contains the design and implementation of a 3D scanner using an 
 3. **Data Transmission:** The ATmega328P microcontroller collects the distance measurements and transmits the data to a computer via serial communication.
 4. **Point Cloud Mapping:** Software on the computer receives the serial data and maps the points to create a 3D representation of the object.
 
-### Mechanical Design
 
-The mechanical design of the 3D scanner includes:
-- **Smooth Shafts:** Used for linear motion to ensure precision.
-- **Screw Shafts:** Used for controlled rotation and vertical movement.
-
-### PCB Layout
-
-The PCB layout is designed using SMD components for compactness and reliability. The layout includes:
-- **Microcontroller Circuit:** Based on ATmega328P for controlling the stepper motors and handling data transmission.
-- **Motor Drivers:** For driving the NEMA 17 stepper motors.
-- **Power Supply Circuit:** To provide necessary power to the components.
 
 ### PCB 
 ![PCB](https://github.com/RPX2001/3D-Scanner/blob/main/WhatsApp%20Image%202024-06-05%20at%2019.54.27.jpeg)
-
-## Getting Started
-
-### Prerequisites
-
-- **Hardware:**
-  - ATmega328P microcontroller
-  - NEMA 17 stepper motors
-  - Stepper drivers (e.g., A4988)
-  - Distance sensor (specify type)
-  - Mechanical components (smooth and screw shafts, turntable)
-  - Custom PCB
-
-- **Software:**
-  - Arduino IDE for programming the ATmega328P
-  - Serial communication software (e.g., PuTTY, Arduino Serial Monitor)
-  - 3D mapping software (e.g., PCL, Meshlab)
-
-### Steps
-
-1. **Assemble the Hardware:**
-   - Connect the stepper motors to the stepper drivers.
-   - Connect the stepper drivers to the ATmega328P microcontroller.
-   - Set up the distance sensor and connect it to the microcontroller.
-   - Assemble the mechanical parts, including the turntable, smooth shafts, and screw shafts.
-   - Ensure the PCB is correctly assembled and connected.
-
-2. **Upload the Code:**
-   - Write the firmware for the ATmega328P to control the stepper motors and read data from the distance sensor.
-   - Upload the code to the ATmega328P using the Arduino IDE.
-
-3. **Calibrate the System:**
-   - Ensure the stepper motors are correctly calibrated for precise movement.
-   - Calibrate the distance sensor for accurate measurements.
-
-4. **Run the Scanner:**
-   - Place the object on the turntable.
-   - Start the scanning process and collect the point cloud data via serial communication.
-
-5. **Map the Point Cloud:**
-   - Use 3D mapping software to visualize the point cloud data and create a 3D model of the object.
 
 
 ## Contributors
