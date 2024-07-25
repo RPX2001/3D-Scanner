@@ -4,7 +4,7 @@ The Solidwork design for our project, 3D Scanner is mainly comprised of 3 parts:
 
 - Main Body
 - Tray lid
-- Rotatable table
+- Turnable table
 - Connector part
 
 Used platform: Solidworks
