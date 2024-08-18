@@ -48,12 +48,13 @@ The Arduino code controls the stepper motors and reads distance values from the 
 
 ### PCB 
 
-<img src="https://github.com/RPX2001/3D-Scanner/blob/main/WhatsApp%20Image%202024-06-05%20at%2019.54.27.jpeg" alt="PCB" width="800">
+<img src="https://github.com/RPX2001/3D-Scanner/blob/main/WhatsApp%20Image%202024-06-05%20at%2019.54.27.jpeg" alt="PCB" width="600">
 
 
 ### Enclosure
 
-<img src="https://github.com/RPX2001/3D-Scanner/blob/main/final.jpeg" alt="Enclosure" width="800">
+<img src="https://github.com/RPX2001/3D-Scanner/blob/main/final.jpeg" alt="Enclosure" width="600">
+<img src="https://github.com/RPX2001/3D-Scanner/blob/main/final.jpeg" alt="Enclosure" width="600">
 
 
 
