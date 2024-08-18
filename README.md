@@ -53,8 +53,12 @@ The Arduino code controls the stepper motors and reads distance values from the 
 
 ### Enclosure
 
-<img src="https://github.com/RPX2001/3D-Scanner/blob/main/final.jpeg" alt="Enclosure" width="600">
-<img src="https://github.com/RPX2001/3D-Scanner/blob/main/final.jpeg" alt="Enclosure" width="600">
+<img src="https://github.com/RPX2001/3D-Scanner/blob/main/prototype.jpeg" alt="Enclosure" width="600">
+
+### System Integration
+
+
+<img src="https://github.com/RPX2001/3D-Scanner/blob/main/system_integration.jpeg" alt="Enclosure" width="600">
 
 
 
